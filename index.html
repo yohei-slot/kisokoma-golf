@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>木曽駒ゴルフ会 2026 旅のしおり</title>
+<style>
+  :root{
+    --green-950:#0e2c1c;
+    --green-800:#17472c;
+    --green-700:#1e5c3a;
+    --green-600:#2a7a4d;
+    --sand:#b9973f;
+    --sand-light:#ecdfb8;
+    --paper:#f7f4ea;
+    --card:#fffdf8;
+    --ink:#26332a;
+    --muted:#68766b;
+    --line:#ddd6c2;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic","Noto Sans JP",Meiryo,sans-serif;
+    line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  .hero{
+    background:
+      radial-gradient(120% 90% at 50% -10%, rgba(255,255,255,.10), rgba(255,255,255,0) 55%),
+      linear-gradient(165deg, var(--green-700) 0%, var(--green-800) 45%, var(--green-950) 100%);
+    color:#fff;
+    text-align:center;
+    padding:46px 20px 38px;
+  }
+  .hero .overline{
+    font-size:.72rem;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    color:var(--sand-light);
+    margin-bottom:14px;
+  }
+  .hero .flag{width:44px;height:44px;margin:0 auto 10px;display:block}
+  .hero h1{
+    font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+    font-size:1.9rem;
+    font-weight:600;
+    letter-spacing:.12em;
+    margin:0 0 6px;
+  }
+  .hero .club{
+    font-size:.9rem;
+    letter-spacing:.18em;
+    color:#d9e6dc;
+    margin-bottom:20px;
+  }
+  .hero .datechip{
+    display:inline-block;
+    border:1px solid rgba(255,255,255,.45);
+    border-radius:999px;
+    padding:7px 22px;
+    font-size:.95rem;
+    letter-spacing:.08em;
+  }
+  .hero .venue{
+    margin-top:14px;
+    font-size:.85rem;
+    color:#cfe0d3;
+    letter-spacing:.06em;
+  }
+  main{max-width:640px;margin:0 auto;padding:26px 16px 10px}
+  section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px 20px 20px;
+    margin-bottom:22px;
+    box-shadow:0 1px 3px rgba(38,51,42,.06);
+  }
+  h2{
+    font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+    font-size:1.15rem;
+    letter-spacing:.14em;
+    color:var(--green-800);
+    margin:0 0 16px;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--green-700);
+    display:flex;align-items:center;gap:9px;
+  }
+  h2 .tee{
+    display:inline-block;width:10px;height:10px;border-radius:50%;
+    background:var(--sand);flex:none;
+  }
+  h3{
+    font-size:.98rem;color:var(--green-700);
+    margin:20px 0 8px;letter-spacing:.05em;
+  }
+  h3:first-of-type{margin-top:4px}
+  p{margin:.4em 0}
+  .note{font-size:.83rem;color:var(--muted)}
+  a{color:var(--green-600)}
+
+  /* 概要 */
+  dl.spec{margin:0;display:grid;grid-template-columns:6.2em 1fr;row-gap:8px}
+  dl.spec dt{color:var(--muted);font-size:.83rem;padding-top:.18em;letter-spacing:.04em}
+  dl.spec dd{margin:0}
+
+  /* タイムライン */
+  .day{margin-bottom:18px}
+  .day:last-child{margin-bottom:0}
+  .dayhead{
+    display:flex;align-items:baseline;gap:10px;
+    background:var(--green-700);color:#fff;
+    border-radius:8px;padding:7px 14px;margin-bottom:10px;
+  }
+  .dayhead .d{font-size:1.02rem;font-weight:700;letter-spacing:.05em}
+  .dayhead .w{font-size:.8rem;color:var(--sand-light)}
+  ul.tl{list-style:none;margin:0;padding:2px 2px 0 6px}
+  ul.tl li{
+    display:grid;grid-template-columns:5.2em 1fr;gap:10px;
+    padding:7px 0;border-bottom:1px dashed var(--line);
+  }
+  ul.tl li:last-child{border-bottom:none}
+  ul.tl .t{
+    font-weight:700;color:var(--green-700);
+    font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+  ul.tl .sub{font-size:.83rem;color:var(--muted)}
+
+  /* スコアカード風テーブル */
+  table.scorecard{
+    width:100%;border-collapse:collapse;background:#fff;
+    font-size:.92rem;margin:6px 0 4px;
+  }
+  table.scorecard caption{
+    text-align:left;font-size:.88rem;font-weight:700;
+    color:var(--green-800);padding-bottom:6px;letter-spacing:.05em;
+  }
+  table.scorecard th{
+    background:var(--green-700);color:#fff;font-weight:600;
+    font-size:.8rem;letter-spacing:.08em;
+    padding:6px 8px;border:1px solid var(--green-800);
+  }
+  table.scorecard td{
+    border:1px solid var(--line);
+    padding:8px 10px;vertical-align:top;
+  }
+  table.scorecard td.time{
+    white-space:nowrap;font-weight:700;color:var(--green-700);
+    font-variant-numeric:tabular-nums;text-align:center;width:5.4em;
+    background:var(--paper);
+  }
+  table.scorecard td.kumi{
+    white-space:nowrap;text-align:center;width:4em;
+    background:var(--paper);font-size:.85rem;color:var(--muted);
+  }
+
+  /* 費用テーブル */
+  table.fee{width:100%;border-collapse:collapse;font-size:.92rem}
+  table.fee td{padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.fee tr:last-child td{border-bottom:none}
+  table.fee td.amount{text-align:right;white-space:nowrap;font-weight:700;color:var(--green-800)}
+
+  /* チェックリスト */
+  ul.check{list-style:none;margin:6px 0;padding:0}
+  ul.check li{
+    padding:6px 0 6px 30px;position:relative;
+    border-bottom:1px dashed var(--line);
+  }
+  ul.check li:last-child{border-bottom:none}
+  ul.check li::before{
+    content:"";position:absolute;left:4px;top:.85em;
+    width:13px;height:13px;border:2px solid var(--green-600);border-radius:3px;
+  }
+
+  .alert{
+    background:#f6efdd;border:1px solid var(--sand-light);
+    border-left:4px solid var(--sand);
+    border-radius:8px;padding:10px 14px;font-size:.88rem;margin:12px 0 2px;
+  }
+
+  .contact{
+    text-align:center;background:var(--green-800);color:#fff;
+    border-radius:10px;padding:18px 14px;
+  }
+  .contact .name{font-size:1.05rem;font-weight:700;letter-spacing:.1em}
+  .contact a{color:var(--sand-light);font-size:1.25rem;font-weight:700;letter-spacing:.05em;text-decoration:none}
+  .contact .note{color:#c3d6c8}
+
+  footer{
+    text-align:center;color:var(--muted);font-size:.78rem;
+    padding:6px 16px 40px;letter-spacing:.05em;
+  }
+  footer .line{width:60px;height:2px;background:var(--sand);margin:0 auto 12px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="overline">Travel Guide ・ 旅のしおり</div>
+  <svg class="flag" viewBox="0 0 48 48" aria-hidden="true">
+    <ellipse cx="24" cy="41" rx="13" ry="3.5" fill="rgba(255,255,255,.25)"/>
+    <line x1="24" y1="8" x2="24" y2="41" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M24 8 L40 13.5 L24 19 Z" fill="#b9973f"/>
+    <circle cx="24" cy="41" r="2.2" fill="#fff"/>
+  </svg>
+  <h1>木曽駒ゴルフ会</h1>
+  <div class="club">東海高校ゴルフ部 17期生</div>
+  <div class="datechip">2026.10.11 <small>(日)</small> — 10.12 <small>(月・祝)</small></div>
+  <div class="venue">木曽駒高原カントリークラブ ／ 堀家山荘</div>
+</header>
+
+<main>
+
+<section>
+  <h2><span class="tee"></span>開催概要</h2>
+  <dl class="spec">
+    <dt>日程</dt><dd>2026年10月11日(日) 〜 12日(月・祝)<br><span class="note">10/12はスポーツの日で祝日です。10/10(土)夜からの前乗りも可(要連絡)。</span></dd>
+    <dt>ゴルフ場</dt><dd>木曽駒高原カントリークラブ<br><span class="note">両日ともスループレー</span></dd>
+    <dt>宿泊</dt><dd>堀家山荘(宿泊無料)</dd>
+    <dt>メンバー</dt><dd>8名 — 川口先生・堀・鈴木・棟方・勅使河原・小澤・金谷・平野</dd>
+  </dl>
+</section>
+
+<section>
+  <h2><span class="tee"></span>スケジュール</h2>
+
+  <div class="day">
+    <div class="dayhead"><span class="d">10/10</span><span class="w">土曜日(前夜)</span></div>
+    <ul class="tl">
+      <li><span class="t">夜間</span><span>前乗り可。希望者は堀までご連絡ください。</span></li>
+    </ul>
+  </div>
+
+  <div class="day">
+    <div class="dayhead"><span class="d">10/11</span><span class="w">日曜日 — 1日目</span></div>
+    <ul class="tl">
+      <li><span class="t">〜10:00</span><span>クラブハウス集合・受付<br><span class="sub">スタート45分前目安。各自到着次第、受付をお願いします。</span></span></li>
+      <li><span class="t">10:45</span><span>第1組スタート(IN)・スループレー</span></li>
+      <li><span class="t">10:52</span><span>第2組スタート(IN)・スループレー</span></li>
+      <li><span class="t">プレー後</span><span>入浴・精算のうえ、堀家山荘へ移動</span></li>
+      <li><span class="t">夜</span><span>堀家山荘にてバーベキュー 🍖</span></li>
+    </ul>
+  </div>
+
+  <div class="day">
+    <div class="dayhead"><span class="d">10/12</span><span class="w">月曜日(スポーツの日) — 2日目</span></div>
+    <ul class="tl">
+      <li><span class="t">〜7:40</span><span>クラブハウス集合・受付<br><span class="sub">朝が早いので寝坊にご注意ください。</span></span></li>
+      <li><span class="t">8:22</span><span>第1組スタート(OUT)・スループレー</span></li>
+      <li><span class="t">8:30</span><span>第2組スタート(OUT)・スループレー</span></li>
+      <li><span class="t">プレー後</span><span>入浴・精算後、現地解散</span></li>
+    </ul>
+  </div>
+
+  <div class="alert">⚠ スループレーのため昼食休憩はありません。必要な方は軽食・飲み物をご用意ください。</div>
+</section>
+
+<section>
+  <h2><span class="tee"></span>組み合わせ</h2>
+
+  <table class="scorecard">
+    <caption>10/11(日) — INスタート</caption>
+    <tr><th>組</th><th>時刻</th><th>メンバー</th></tr>
+    <tr><td class="kumi">第1組</td><td class="time">10:45</td><td>川口先生・堀・鈴木</td></tr>
+    <tr><td class="kumi">第2組</td><td class="time">10:52</td><td>棟方・勅使河原・小澤・金谷</td></tr>
+  </table>
+
+  <table class="scorecard" style="margin-top:16px">
+    <caption>10/12(月・祝) — OUTスタート</caption>
+    <tr><th>組</th><th>時刻</th><th>メンバー</th></tr>
+    <tr><td class="kumi">第1組</td><td class="time">8:22</td><td>堀・勅使河原・平野・鈴木</td></tr>
+    <tr><td class="kumi">第2組</td><td class="time">8:30</td><td>川口先生・金谷・小澤・棟方</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2><span class="tee"></span>ゴルフ場のご案内</h2>
+  <p><strong>木曽駒高原カントリークラブ</strong><br>
+  〒399-6101 長野県木曽郡木曽町日義4898-8<br>
+  TEL: 0264-23-7001<br>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=木曽駒高原カントリークラブ" target="_blank" rel="noopener">📍 Googleマップで開く</a></p>
+
+  <p class="note">18ホール・パー72(レギュラー 6,341yd)。白樺と唐松に囲まれた林間コースで、コースを横切るクリークと高速グリーンが特徴です。</p>
+
+  <h3>アクセス</h3>
+  <dl class="spec">
+    <dt>東京方面</dt><dd>中央道 伊那IC → 国道361号(権兵衛トンネル) → 国道19号<br><span class="note">伊那ICから約35分(28km)</span></dd>
+    <dt>名古屋方面</dt><dd>中央道 中津川IC → 国道19号<br><span class="note">中津川ICから約85分(65km)</span></dd>
+    <dt>電車</dt><dd>JR中央本線「木曽福島」駅からタクシー約15分</dd>
+  </dl>
+
+  <div class="alert">🚗 車の割り振りは調整中です。決まり次第、幹事から連絡します。</div>
+</section>
+
+<section>
+  <h2><span class="tee"></span>宿泊・バーベキュー</h2>
+  <p><strong>堀家山荘</strong><br>
+  〒399-6101 長野県木曽郡木曽町日義235<br>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=長野県木曽郡木曽町日義235" target="_blank" rel="noopener">📍 Googleマップで開く</a></p>
+  <ul class="tl" style="padding-left:2px">
+    <li><span class="t">宿泊</span><span>無料。10/10(土)夜からの前乗りも可能です(堀まで要連絡)。</span></li>
+    <li><span class="t">BBQ</span><span>10/11(日)夜、山荘にて開催。会費 2,000〜3,000円/人 想定(実費精算)。</span></li>
+    <li><span class="t">備品</span><span>タオルはあります。歯ブラシ等のアメニティは各自ご持参ください。</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="tee"></span>費用</h2>
+  <table class="fee">
+    <tr><td>プレーフィー<br><span class="note">当日ゴルフ場にて各自精算</span></td><td class="amount">23,530円/日</td></tr>
+    <tr><td>宿泊(堀家山荘)</td><td class="amount">無料</td></tr>
+    <tr><td>バーベキュー<br><span class="note">実費精算・当日集金予定</span></td><td class="amount">2,000〜3,000円</td></tr>
+  </table>
+  <p class="note" style="margin-top:10px">※ 2日間プレーの場合、プレーフィー合計は47,060円です。交通費(高速代・ガソリン代)の扱いは車の割り振り確定後にご案内します。</p>
+</section>
+
+<section>
+  <h2><span class="tee"></span>持ち物・注意事項</h2>
+  <ul class="check">
+    <li>ゴルフ用品一式(クラブ・シューズ・グローブ・ボール)</li>
+    <li><strong>防寒着(ダウン等)</strong> — 夜はかなり冷えます</li>
+    <li>歯ブラシ等のアメニティ(タオルは山荘にあります)</li>
+    <li>スループレー用の軽食・飲み物</li>
+    <li>現金(プレーフィー・BBQ会費)</li>
+    <li>常備薬・健康保険証</li>
+  </ul>
+  <div class="alert">🌡 10月の木曽駒高原は日中15℃・夜間5℃前後です。特に夜間は冷え込むため、防寒対策を忘れずに。</div>
+</section>
+
+<section>
+  <h2><span class="tee"></span>幹事連絡先</h2>
+  <div class="contact">
+    <div class="name">幹事: 堀</div>
+    <div id="tel">(読み込み中…)</div>
+    <div class="note">前乗り希望・遅刻・欠席などの連絡はこちらまで</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="line"></div>
+  東海高校ゴルフ部17期生 木曽駒ゴルフ会 2026<br>
+  最終更新: 2026.8.17(内容は随時更新します)
+</footer>
+
+<script>
+  (function(){
+    var p = ["070","8944","9213"];
+    var el = document.getElementById("tel");
+    var a = document.createElement("a");
+    a.href = "tel:" + p.join("");
+    a.textContent = p.join("-");
+    el.textContent = "";
+    el.appendChild(a);
+  })();
+</script>
+
+</body>
+</html>
