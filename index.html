@@ -20,6 +20,7 @@
     --line:#ddd6c2;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{
     margin:0;
     background:var(--paper);
@@ -34,7 +35,7 @@
       linear-gradient(165deg, var(--green-700) 0%, var(--green-800) 45%, var(--green-950) 100%);
     color:#fff;
     text-align:center;
-    padding:46px 20px 38px;
+    padding:36px 18px 28px;
   }
   .hero .overline{
     font-size:.72rem;
@@ -46,7 +47,7 @@
   .hero .flag{width:44px;height:44px;margin:0 auto 10px;display:block}
   .hero h1{
     font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
-    font-size:1.9rem;
+    font-size:clamp(1.55rem, 7vw, 1.9rem);
     font-weight:600;
     letter-spacing:.12em;
     margin:0 0 6px;
@@ -71,14 +72,32 @@
     color:#cfe0d3;
     letter-spacing:.06em;
   }
-  main{max-width:640px;margin:0 auto;padding:26px 16px 10px}
+  nav.chips{
+    position:sticky;top:0;z-index:10;
+    background:rgba(247,244,234,.96);
+    -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--line);
+    display:flex;gap:8px;overflow-x:auto;
+    padding:10px 12px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  nav.chips::-webkit-scrollbar{display:none}
+  nav.chips a{
+    flex:none;font-size:.8rem;color:var(--green-800);
+    text-decoration:none;border:1px solid var(--line);
+    background:#fff;border-radius:999px;
+    padding:5px 13px;letter-spacing:.04em;
+  }
+  main{max-width:560px;margin:0 auto;padding:16px 12px 8px}
   section{
     background:var(--card);
     border:1px solid var(--line);
     border-radius:12px;
-    padding:22px 20px 20px;
-    margin-bottom:22px;
+    padding:18px 16px 16px;
+    margin-bottom:14px;
     box-shadow:0 1px 3px rgba(38,51,42,.06);
+    scroll-margin-top:56px;
   }
   h2{
     font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
@@ -213,9 +232,20 @@
   <div class="venue">木曽駒高原カントリークラブ ／ 堀家山荘</div>
 </header>
 
+<nav class="chips">
+  <a href="#overview">概要</a>
+  <a href="#schedule">日程</a>
+  <a href="#pairing">組み合わせ</a>
+  <a href="#course">ゴルフ場</a>
+  <a href="#lodge">宿・BBQ</a>
+  <a href="#fee">費用</a>
+  <a href="#items">持ち物</a>
+  <a href="#contact">連絡先</a>
+</nav>
+
 <main>
 
-<section>
+<section id="overview">
   <h2><span class="tee"></span>開催概要</h2>
   <dl class="spec">
     <dt>日程</dt><dd>2026年10月11日(日) 〜 12日(月・祝)<br><span class="note">10/12はスポーツの日で祝日です。10/10(土)夜からの前乗りも可(要連絡)。</span></dd>
@@ -225,7 +255,7 @@
   </dl>
 </section>
 
-<section>
+<section id="schedule">
   <h2><span class="tee"></span>スケジュール</h2>
 
   <div class="day">
@@ -259,7 +289,7 @@
   <div class="alert">⚠ スループレーのため昼食休憩はありません。必要な方は軽食・飲み物をご用意ください。</div>
 </section>
 
-<section>
+<section id="pairing">
   <h2><span class="tee"></span>組み合わせ</h2>
 
   <table class="scorecard">
@@ -277,7 +307,7 @@
   </table>
 </section>
 
-<section>
+<section id="course">
   <h2><span class="tee"></span>ゴルフ場のご案内</h2>
   <p><strong>木曽駒高原カントリークラブ</strong><br>
   〒399-6101 長野県木曽郡木曽町日義4898-8<br>
@@ -285,6 +315,8 @@
   <a href="https://www.google.com/maps/search/?api=1&amp;query=木曽駒高原カントリークラブ" target="_blank" rel="noopener">📍 Googleマップで開く</a></p>
 
   <p class="note">18ホール・パー72(レギュラー 6,341yd)。白樺と唐松に囲まれた林間コースで、コースを横切るクリークと高速グリーンが特徴です。</p>
+
+  <div class="alert">🧥 <strong>ジャケット必須</strong> — クラブハウス来場時はジャケットを着用してください。</div>
 
   <h3>アクセス</h3>
   <dl class="spec">
@@ -296,7 +328,7 @@
   <div class="alert">🚗 車の割り振りは調整中です。決まり次第、幹事から連絡します。</div>
 </section>
 
-<section>
+<section id="lodge">
   <h2><span class="tee"></span>宿泊・バーベキュー</h2>
   <p><strong>堀家山荘</strong><br>
   〒399-6101 長野県木曽郡木曽町日義235<br>
@@ -308,7 +340,7 @@
   </ul>
 </section>
 
-<section>
+<section id="fee">
   <h2><span class="tee"></span>費用</h2>
   <table class="fee">
     <tr><td>プレーフィー<br><span class="note">当日ゴルフ場にて各自精算</span></td><td class="amount">23,530円/日</td></tr>
@@ -318,10 +350,11 @@
   <p class="note" style="margin-top:10px">※ 2日間プレーの場合、プレーフィー合計は47,060円です。交通費(高速代・ガソリン代)の扱いは車の割り振り確定後にご案内します。</p>
 </section>
 
-<section>
+<section id="items">
   <h2><span class="tee"></span>持ち物・注意事項</h2>
   <ul class="check">
     <li>ゴルフ用品一式(クラブ・シューズ・グローブ・ボール)</li>
+    <li><strong>ジャケット</strong> — クラブハウス来場時に必須</li>
     <li><strong>防寒着(ダウン等)</strong> — 夜はかなり冷えます</li>
     <li>歯ブラシ等のアメニティ(タオルは山荘にあります)</li>
     <li>スループレー用の軽食・飲み物</li>
@@ -331,12 +364,11 @@
   <div class="alert">🌡 10月の木曽駒高原は日中15℃・夜間5℃前後です。特に夜間は冷え込むため、防寒対策を忘れずに。</div>
 </section>
 
-<section>
+<section id="contact">
   <h2><span class="tee"></span>幹事連絡先</h2>
   <div class="contact">
     <div class="name">幹事: 堀</div>
     <div id="tel">(読み込み中…)</div>
-    <div class="note">前乗り希望・遅刻・欠席などの連絡はこちらまで</div>
   </div>
 </section>
 
